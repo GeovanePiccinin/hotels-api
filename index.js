@@ -10,6 +10,10 @@ global.logger = logger;
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(function (req, res, next) {
+  res.contentType("application/json");
+  next();
+});
 
 app.use("/api/v1", v1Router);
 app.use("/api/v2", v2Router);
