@@ -1,6 +1,6 @@
 import HotelsService from "../services/hotels.service.js";
 import { validationResult } from "express-validator";
-import { cache } from "../../middlewares/cache.js";
+import { cache } from "../../middlewares/cache.middleware.js";
 
 const myValidationResult = validationResult.withDefaults({
   formatter: (error) => error.msg,
