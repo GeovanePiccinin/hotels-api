@@ -28,6 +28,12 @@ async function updateRefreshToken(userId, refreshToken) {
   return await UsersRepository.updateRefreshToken(userId, refreshToken);
 }
 
+function basicAuthentication(user, password) {
+  if (user === process.env.USER && password === process.env.PASSWORD) {
+    return true;
+  }
+}
+
 export default {
   createUser,
   updateUser,
@@ -36,4 +42,5 @@ export default {
   deleteUser,
   updateRefreshToken,
   getUserByEmail,
+  basicAuthentication,
 };

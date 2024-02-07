@@ -1,6 +1,10 @@
 import Sequelize from "sequelize";
 import db from "../repositories/db.js";
 
+export const CUSTOMER = "customer";
+export const ADMIN = "admin";
+export const ROLES = [CUSTOMER];
+
 const User = db.define(
   "users",
   {
@@ -33,6 +37,7 @@ const User = db.define(
     role: {
       type: Sequelize.STRING,
       allowNull: false,
+      defaultValue: CUSTOMER,
     },
     refreshToken: {
       type: Sequelize.STRING,
@@ -46,5 +51,3 @@ const User = db.define(
 User.sync();
 
 export default User;
-
-export const ROLES = ["admin", "user"];
