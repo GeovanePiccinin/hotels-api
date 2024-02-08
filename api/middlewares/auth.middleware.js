@@ -34,6 +34,8 @@ const verifyAuthorization = (authorizedRoles) => (req, res, next) => {
   try {
     const { user } = req;
 
+    console.log("verify authorization", user);
+
     if (!user || !user.role || !authorizedRoles.includes(user.role)) {
       return res.status(403).json({ error: "Forbidden" });
     }

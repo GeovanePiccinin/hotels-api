@@ -2,13 +2,16 @@ import "./env.js";
 import express from "express";
 import cors from "cors";
 import logger from "./config/logger.js";
+import swaggerUI from "swagger-ui-express";
 import v1Router from "./api/v1/router.js";
 import v2Router from "./api/v2/router.js";
+import { swaggerDoc } from "./api/v1/doc/openapi.js";
 
 global.logger = logger;
 
 const app = express();
 app.use(express.json());
+app.use("/api/v1/doc", swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 app.use(cors());
 app.use(function (req, res, next) {
   res.contentType("application/json");

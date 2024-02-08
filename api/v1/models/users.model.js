@@ -2,6 +2,7 @@ import Sequelize from "sequelize";
 import db from "../repositories/db.js";
 
 export const CUSTOMER = "customer";
+export const USER = "user";
 export const ADMIN = "admin";
 export const ROLES = [CUSTOMER];
 

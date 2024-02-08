@@ -7,14 +7,14 @@ import {
   verifyAuthorization,
   verifyToken,
 } from "../../middlewares/auth.middleware.js";
-import { CUSTOMER } from "../models/users.model.js";
+import { CUSTOMER, USER, ADMIN } from "../models/users.model.js";
 
 const router = express.Router();
 
 router.get(
   "/",
   verifyToken,
-  verifyAuthorization(CUSTOMER),
+  verifyAuthorization([CUSTOMER, USER, ADMIN]),
   pagination(),
   cacheMiddleware("getHotels"),
   HotelsController.getHotels
