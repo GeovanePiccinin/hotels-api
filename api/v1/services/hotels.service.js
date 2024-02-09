@@ -1,7 +1,7 @@
 import HotelsRepository from "../repositories/hotels.repository.js";
 
-async function getHotels(pagination) {
-  return await HotelsRepository.getHotels(pagination);
+async function getHotels(pagination, count) {
+  return await HotelsRepository.getHotels(pagination, count);
 }
 
 async function getHotel(id) {

@@ -1,8 +1,11 @@
 import Hotel from "../models/hotels.model.js";
 
-async function getHotels(pagination) {
+async function getHotels(pagination, count = true) {
   try {
-    return await Hotel.findAndCountAll({ ...pagination });
+    if (count) {
+      return await Hotel.findAndCountAll({ ...pagination });
+    }
+    return await Hotel.findAll({ ...pagination });
   } catch (err) {
     throw err;
   }

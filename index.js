@@ -3,9 +3,11 @@ import express from "express";
 import cors from "cors";
 import logger from "./config/logger.js";
 import swaggerUI from "swagger-ui-express";
+import { swaggerDoc } from "./api/v1/doc/openapi.js";
+import { graphqlHTTP } from "express-graphql";
 import v1Router from "./api/v1/router.js";
 import v2Router from "./api/v2/router.js";
-import { swaggerDoc } from "./api/v1/doc/openapi.js";
+import Schema from "./api/v1/schema/index.js";
 
 global.logger = logger;
 
@@ -17,6 +19,14 @@ app.use(function (req, res, next) {
   res.contentType("application/json");
   next();
 });
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema: Schema,
+    graphiql: true,
+  })
+);
 
 app.use("/api/v1", v1Router);
 app.use("/api/v2", v2Router);
