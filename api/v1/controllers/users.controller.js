@@ -49,7 +49,7 @@ async function updateUser(req, res, next) {
     User.UserId = req.params.id;
     User = await UsersService.updateUser(User);
     res.status(204).end();
-    logger.info(`POST /Users - ${JSON.stringify(User)}`);
+    logger.info(`POST /Users/:id - ${JSON.stringify(User)}`);
   } catch (err) {
     next(err);
   }
