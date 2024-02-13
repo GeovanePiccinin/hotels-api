@@ -1,4 +1,5 @@
 import { body } from "express-validator";
+import { dateConverterDMYtoYMD } from "../../utils/date.js";
 
 const validate = (method) => {
   switch (method) {
@@ -6,21 +7,26 @@ const validate = (method) => {
     case "updateReservation":
       {
         return [
-          body("roomId", "is required").exists().notEmpty().isNumeric(),
-          body("userId", "is required").exists().notEmpty().isNumeric(),
-          body("checkin", "is required. Date format")
+          body("roomId", "roomId is required").exists().notEmpty().isNumeric(),
+          body("userId", "userId is required").exists().notEmpty(),
+          body("checkin", "checkin is required. Date format")
             .exists()
             .notEmpty()
-            .isDate({ format: "DD/MM/YYYY", delimiters: "/" }),
-          body("checkin", "is required. Date format")
+            .custom((value) => {
+              return !isNaN(dateConverterDMYtoYMD(value));
+            })
+            .customSanitizer((value) => dateConverterDMYtoYMD(value)),
+          body("checkout", "checkout is required. Date format DD/MM/YYYY")
             .exists()
             .notEmpty()
-            .isDate({ format: "DD/MM/YYYY", delimiters: "/" }),
-          body("checkout", "is required. Date format DD/MM/YYYY")
-            .exists()
-            .notEmpty()
-            .isDate({ format: "DD/MM/YYYY", delimiters: "/" }),
-          body("numberOfGuests", "is required. Numbers allowed: 1 to 4")
+            .custom((value) => {
+              return !isNaN(dateConverterDMYtoYMD(value));
+            })
+            .customSanitizer((value) => dateConverterDMYtoYMD(value)),
+          body(
+            "numberOfGuests",
+            "numberOfGuests is required. Numbers allowed: 1 to 4"
+          )
             .exists()
             .notEmpty()
             .isInt({ min: 1, max: 4 }),

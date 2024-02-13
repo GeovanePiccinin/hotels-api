@@ -1,6 +1,6 @@
 import ReservationsRepository from "../repositories/reservations.repository.js";
 import RoomServices from "../services/rooms.service.js";
-import { dateDiff } from "../../utils/date.js";
+import { dateDiff, getOnlyDate } from "../../utils/date.js";
 
 async function getReservations(pagination) {
   return await ReservationsRepository.getReservations(pagination);
@@ -16,8 +16,24 @@ async function createReservation(reservation) {
     throw new Error("Room not found");
   }
 
-  const numberOfDays = dateDiff(reservation.checkout, reservation.checkin);
+  const checkReservations = await ReservationsRepository.checkReservations(
+    reservation.roomId,
+    getOnlyDate(reservation.checkin)
+  );
+
+  if (Array.isArray(checkReservations) && checkReservations.length) {
+    const error = new Error("Quarto já foi reservado para esta data.");
+    error.statusCode = 409;
+    throw error;
+  }
+
+  const numberOfDays = dateDiff(
+    reservation.checkin,
+    reservation.checkout,
+    "days"
+  );
   const totalRent = numberOfDays * room.dailyRent;
+
   reservation.totalRent = totalRent;
 
   return await ReservationsRepository.createReservation(reservation);

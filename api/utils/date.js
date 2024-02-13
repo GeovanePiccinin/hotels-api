@@ -31,3 +31,15 @@ export function dateDiff(date1, date2, interval) {
       return undefined;
   }
 }
+
+export function dateConverterDMYtoYMD(value) {
+  let dateArray = value.split("/");
+  return new Date(`${dateArray[2]}/${dateArray[1]}/${dateArray[0]}`);
+}
+
+export function getOnlyDate(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return year + "-" + month + "-" + day;
+}

@@ -1,4 +1,6 @@
 import Reservation from "../models/reservations.model.js";
+import { QueryTypes } from "sequelize";
+import sequelize from "./db.js";
 
 async function getReservations(pagination) {
   try {
@@ -11,6 +13,24 @@ async function getReservations(pagination) {
 async function getReservation(id) {
   try {
     return await Reservation.findByPk(id);
+  } catch (err) {
+    throw err;
+  }
+}
+
+async function checkReservations(roomId, checkin) {
+  try {
+    const [results, metadata] = await sequelize.query(`
+      SELECT * FROM "reservations"
+      WHERE
+        room_id = ${roomId}
+      AND (
+          checkin <= '${checkin}'
+        AND
+          checkout >= '${checkin}'
+      )
+    `);
+    return results;
   } catch (err) {
     throw err;
   }
@@ -54,4 +74,5 @@ export default {
   getReservation,
   getReservations,
   deleteReservation,
+  checkReservations,
 };
