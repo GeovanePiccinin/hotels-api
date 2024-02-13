@@ -1,8 +1,8 @@
 import express from "express";
 import HotelsController from "../controllers/hotels.controller.js";
 import HotelsValidator from "../validators/hotels.validator.js";
-import pagination from "../../middlewares/pagination-sorting.js";
-import { cacheMiddleware } from "../../middlewares/cache.js";
+import pagination from "../../middlewares/pagination.middleware.js";
+import { cacheMiddleware } from "../../middlewares/cache.middleware.js";
 
 const router = express.Router();
 
