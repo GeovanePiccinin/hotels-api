@@ -37,9 +37,17 @@ const User = db.define(
     role: {
       type: Sequelize.STRING,
       allowNull: false,
+      defaultValue: CUSTOMER,
+    },
+    refreshToken: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: "NOT ISSUED",
     },
   },
   { underscored: true }
 );
+
+User.sync();
 
 export default User;

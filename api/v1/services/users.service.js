@@ -1,4 +1,4 @@
-import UsersRepository from "../repositories/users.repository.js";
+import UsersRepository from "../repositories/Users.repository.js";
 
 async function getUsers(pagination) {
   return await UsersRepository.getUsers(pagination);
@@ -24,11 +24,23 @@ async function updateUser(user) {
   return await UsersRepository.updateUser(user);
 }
 
+async function updateRefreshToken(userId, refreshToken) {
+  return await UsersRepository.updateRefreshToken(userId, refreshToken);
+}
+
+function basicAuthentication(user, password) {
+  if (user === process.env.USER && password === process.env.PASSWORD) {
+    return true;
+  }
+}
+
 export default {
-  getUsers,
-  getUser,
-  deleteUser,
-  updateUser,
   createUser,
+  updateUser,
+  getUser,
+  getUsers,
+  deleteUser,
+  updateRefreshToken,
   getUserByEmail,
+  basicAuthentication,
 };

@@ -27,4 +27,4 @@ app.use((err, req, res, next) => {
     .send({ error: err.message || "Something went wrong" });
 });
 
-app.listen(3000, () => console.log("API Started!"));
+app.listen(process.env.port || 3000, () => console.log("API Started!"));

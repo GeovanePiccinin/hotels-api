@@ -18,7 +18,11 @@ async function getUser(id) {
 
 async function getUserByEmail(email) {
   try {
-    return await User.findOne({ where: { email: email } });
+    return await User.findOne({
+      where: {
+        email: email,
+      },
+    });
   } catch (err) {
     throw err;
   }
@@ -36,7 +40,7 @@ async function deleteUser(id) {
   try {
     await User.destroy({
       where: {
-        userId: id,
+        UserId: id,
       },
     });
   } catch (err) {
@@ -48,19 +52,34 @@ async function updateUser(user) {
   try {
     await User.update(user, {
       where: {
-        userId: user.userId,
+        UserId: user.UserId,
       },
     });
   } catch (err) {
     throw err;
   }
 }
+async function updateRefreshToken(userId, refreshToken) {
+  try {
+    await User.update(
+      { refreshToken: refreshToken },
+      {
+        where: {
+          userId: userId,
+        },
+      }
+    );
+  } catch (err) {
+    throw err;
+  }
+}
 
 export default {
-  getUsers,
-  getUser,
-  deleteUser,
-  updateUser,
   createUser,
+  updateUser,
+  getUser,
+  getUsers,
+  deleteUser,
+  updateRefreshToken,
   getUserByEmail,
 };
