@@ -14,6 +14,7 @@ const signupValidation = [
 
 const validate = (method) => {
   switch (method) {
+    case "customer_update":
     case "customer_signup": {
       return [
         ...signupValidation,

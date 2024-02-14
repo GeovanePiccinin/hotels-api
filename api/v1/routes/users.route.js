@@ -17,13 +17,13 @@ router.get("/:id", UsersController.getUser);
 
 router.post(
   "/",
-  UsersValidator.validate("createUser"),
+  UsersValidator.validate("customer_signup"),
   UsersController.createUser
 );
 
 router.put(
   "/:id",
-  UsersValidator.validate("updateUser"),
+  UsersValidator.validate("customer_update"),
   UsersController.updateUser
 );
 

@@ -40,7 +40,7 @@ async function deleteUser(id) {
   try {
     await User.destroy({
       where: {
-        UserId: id,
+        userId: id,
       },
     });
   } catch (err) {
@@ -52,7 +52,7 @@ async function updateUser(user) {
   try {
     await User.update(user, {
       where: {
-        UserId: user.UserId,
+        userId: user.userId,
       },
     });
   } catch (err) {
