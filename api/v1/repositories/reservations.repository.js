@@ -1,5 +1,4 @@
 import Reservation from "../models/reservations.model.js";
-import { QueryTypes } from "sequelize";
 import sequelize from "./db.js";
 
 async function getReservations(pagination) {
