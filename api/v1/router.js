@@ -21,6 +21,8 @@ router.use("/users", usersRouter);
 
 router.use("/admin", adminRouter);
 
+router.use("/reservations", reservationsRouter);
+
 router.post(
   "/signup",
   UsersValidator.validate("customer_signup"),
