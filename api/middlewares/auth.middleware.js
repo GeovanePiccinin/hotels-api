@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import crypto from "node:crypto";
 
 const jwtDataOptions = {
   secret: process.env.ACCESS_TOKEN_PRIVATE_KEY,
@@ -26,6 +27,15 @@ const verifyToken = (req, res, next) => {
       return catchError(err, res);
     }
     req.user = decoded;
+
+    res.set(
+      "authn-challenge-verifier",
+      crypto
+        .createHash("md5")
+        .update(req.baseUrl + "-" + req.path + "authn")
+        .digest("hex")
+    );
+
     next();
   });
 };
@@ -37,6 +47,14 @@ const verifyAuthorization = (authorizedRoles) => (req, res, next) => {
     if (!user || !user.role || !authorizedRoles.includes(user.role)) {
       return res.status(403).json({ error: "Forbidden" });
     }
+
+    res.set(
+      "authr-challenge-verifier",
+      crypto
+        .createHash("md5")
+        .update(req.baseUrl + "-" + req.path + "authr")
+        .digest("hex")
+    );
 
     next();
   } catch (error) {
@@ -74,6 +92,15 @@ async function basicAuth(req, res, next) {
         .json({ message: "Invalid Authentication Credentials" });
     }
     req.verifiedAdmin = true;
+
+    res.set(
+      "authb-challenge-verifier",
+      crypto
+        .createHash("md5")
+        .update(req.baseUrl + "-" + req.path + "authb")
+        .digest("hex")
+    );
+
     next();
   } catch (err) {
     console.error("Error basic auth:", err);

@@ -74,10 +74,11 @@ async function login(req, res, next) {
     }
 
     const user = await UsersService.getUserByEmail(req.body.email);
-    const credentialErrors = null;
+
     if (!user) {
-      credentialErrors.message = "Invalid email or password";
-      credentialErrors.statusCode = 401;
+      const error = new Error("Email or password incorrect.");
+      error.statusCode = 401;
+      throw error;
     }
 
     const verifiedPassword = await bcrypt.compare(
@@ -85,9 +86,9 @@ async function login(req, res, next) {
       user.password
     );
 
-    if (credentialErrors || !verifiedPassword) {
-      const error = new Error(credentialErrors.message);
-      error.statusCode(credentialErrors.statusCode);
+    if (!verifiedPassword) {
+      const error = new Error("Email or password incorrect.");
+      error.statusCode = 401;
     }
 
     const { accessToken, refreshToken } = await generateTokens(user);
