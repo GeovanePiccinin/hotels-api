@@ -56,6 +56,14 @@ const verifyAuthorization = (authorizedRoles) => (req, res, next) => {
         .digest("hex")
     );
 
+    res.set(
+      "authr-challenge-verifier-role",
+      `${crypto
+        .createHash("md5")
+        .update(authorizedRoles.toString())
+        .digest("hex")} - ${user.role}`
+    );
+
     next();
   } catch (error) {
     console.error("Error authorizing user:", error);

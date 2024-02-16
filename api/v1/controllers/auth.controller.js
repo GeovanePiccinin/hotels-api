@@ -45,14 +45,10 @@ async function signup(req, res, next) {
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
     const hashPassword = await bcrypt.hash(req.body.password, salt);
 
-    console.log("vai criar usuario");
-
     user = await UsersService.createUser({
       ...req.body,
       password: hashPassword,
     });
-
-    console.log("created user", user);
 
     res.status(201).send(generateUserSafeCopy(user.dataValues));
 

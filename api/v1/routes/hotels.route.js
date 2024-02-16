@@ -13,14 +13,18 @@ const router = express.Router();
 
 router.get(
   "/",
-  verifyToken,
-  verifyAuthorization(CUSTOMER),
+
   pagination(),
   cacheMiddleware("getHotels"),
   HotelsController.getHotels
 );
 
-router.get("/:id", HotelsController.getHotel);
+router.get(
+  "/:id",
+  verifyToken,
+  verifyAuthorization([CUSTOMER]),
+  HotelsController.getHotel
+);
 
 router.post(
   "/",
