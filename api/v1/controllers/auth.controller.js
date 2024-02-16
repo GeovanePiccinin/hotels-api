@@ -85,6 +85,7 @@ async function login(req, res, next) {
     if (!verifiedPassword) {
       const error = new Error("Email or password incorrect.");
       error.statusCode = 401;
+      throw error;
     }
 
     const { accessToken, refreshToken } = await generateTokens(user);
