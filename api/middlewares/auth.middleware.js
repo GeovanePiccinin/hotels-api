@@ -30,10 +30,12 @@ const verifyToken = (req, res, next) => {
 
     res.set(
       "authn-challenge-verifier",
-      crypto
-        .createHash("md5")
-        .update(req.baseUrl + "-" + req.path + "authn")
-        .digest("hex")
+      String(
+        crypto
+          .createHash("md5")
+          .update(req.baseUrl + "authn")
+          .digest("hex")
+      ).slice(-10)
     );
 
     next();
@@ -50,18 +52,22 @@ const verifyAuthorization = (authorizedRoles) => (req, res, next) => {
 
     res.set(
       "authr-challenge-verifier",
-      crypto
-        .createHash("md5")
-        .update(req.baseUrl + "-" + req.path + "authr")
-        .digest("hex")
+      String(
+        crypto
+          .createHash("md5")
+          .update(req.baseUrl + "authr")
+          .digest("hex")
+      ).slice(-10)
     );
 
     res.set(
       "authr-challenge-verifier-role",
-      `${crypto
-        .createHash("md5")
-        .update(authorizedRoles.toString())
-        .digest("hex")} - ${user.role}`
+      String(
+        `${crypto
+          .createHash("md5")
+          .update(authorizedRoles.toString())
+          .digest("hex")}`
+      ).slice(-10)
     );
 
     next();
@@ -100,13 +106,18 @@ async function basicAuth(req, res, next) {
         .json({ message: "Invalid Authentication Credentials" });
     }
     req.verifiedAdmin = true;
+    req.user = {
+      role: "admin",
+    };
 
     res.set(
       "authb-challenge-verifier",
-      crypto
-        .createHash("md5")
-        .update(req.baseUrl + "-" + req.path + "authb")
-        .digest("hex")
+      String(
+        crypto
+          .createHash("md5")
+          .update(req.baseUrl + "authb")
+          .digest("hex")
+      ).slice(-10)
     );
 
     next();

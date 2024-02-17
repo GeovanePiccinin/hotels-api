@@ -60,9 +60,9 @@ CREATE TABLE public.users (
     refresh_token character varying(255) DEFAULT 'NOT ISSUED' NOT NULL ,
 );
 
-INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ('e978211e-d581-49f7-9a86-efe01a7309f8', 'Angelo 1', 'Ferreira', 'angelo1.ferreira@email.com', 'senha123', '(39) 98566-4556', 'customer');
-INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ('5777a9d4-8d4f-48c4-86b2-aa3de5ff7a3f', 'Fabio 1', 'Ferreira', 'fabio1.ferreira@email.com', 'senha123', '(39) 98566-4556', 'customer');
-INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ('fbcfeed3-10ce-4638-8991-ed8c85a40b5c', 'Maria 1', 'Ferreira', 'maria1.ferreira@email.com', 'senha123', '(39) 98566-4556', 'customer');
+INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ("195bfa8f-e6d6-4911-938c-8ef23aaba157","Fabio 2","Ferreira","fabio2.ferreira@email.com","$2b$10$TIpSNxZ3mZZJoEAlavWx6eY.608pzzSYrVwTFuTyNqcF2/6yKAf0W","(39) 98566-4556","customer");
+INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ("27d7f819-8388-46dd-8298-96fd8470bd93","Angelo 2","Ferreira","angelo2.ferreira@email.com","$2b$10$Sra4QaC4nMEo2XhtzNi7geTHJJVpLF0iDeH6x3q1l2BK0gt.yYZcW","(39) 98566-4556","manager");
+INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ("65d3157e-abbd-44b4-b2fb-0c328f33f6e8","Maria 2","ferreira","maia2.ferreira@email.com","$2b$10$9VNt/jQ1fwfKUqxsXB6IQuvsy2Yuv9wKAl/Wu03nsnyLakfETFQH6","(39) 98566-4556","admin");
 
 
 CREATE TABLE public.reservations (
@@ -77,6 +77,6 @@ CONSTRAINT fk_rooms FOREIGN KEY (room_id) REFERENCES rooms (room_id),
 CONSTRAINT fk_users FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
-INSERT INTO public.reservations (reservation_id, checkin, checkout, total_rent, number_of_guests, room_id, user_id) VALUES (1, '2020-12-05', '2020-12-07', 400, 2, 1, 'e978211e-d581-49f7-9a86-efe01a7309f8');
-INSERT INTO public.reservations (reservation_id, checkin, checkout, total_rent, number_of_guests, room_id, user_id) VALUES (2, '2020-12-15', '2020-12-17', 600, 2, 2, '5777a9d4-8d4f-48c4-86b2-aa3de5ff7a3f');
-INSERT INTO public.reservations (reservation_id, checkin, checkout, total_rent, number_of_guests, room_id, user_id) VALUES (3, '2020-12-25', '2020-12-27', 600, 2, 2, 'fbcfeed3-10ce-4638-8991-ed8c85a40b5c');
+INSERT INTO public.reservations ( checkin, checkout, total_rent, number_of_guests, room_id, user_id) VALUES ('2020-12-05', '2020-12-07', 400, 2, 1, 'e978211e-d581-49f7-9a86-efe01a7309f8');
+INSERT INTO public.reservations ( checkin, checkout, total_rent, number_of_guests, room_id, user_id) VALUES ('2020-12-15', '2020-12-17', 600, 2, 2, '5777a9d4-8d4f-48c4-86b2-aa3de5ff7a3f');
+INSERT INTO public.reservations ( checkin, checkout, total_rent, number_of_guests, room_id, user_id) VALUES ('2020-12-25', '2020-12-27', 600, 2, 2, 'fbcfeed3-10ce-4638-8991-ed8c85a40b5c');
