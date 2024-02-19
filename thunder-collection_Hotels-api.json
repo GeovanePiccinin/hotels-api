@@ -1,0 +1,1115 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Hotels-api",
+    "dateExported": "2024-02-19T01:23:38.902Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "c0a1afdb-c718-4b96-9aeb-b7836bbbe817",
+            "name": "hotels-api",
+            "containerId": "",
+            "created": "2024-02-14T17:55:20.119Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "51fb596e-f85a-4630-9ff7-100f27df01b5",
+            "name": "v1",
+            "containerId": "c0a1afdb-c718-4b96-9aeb-b7836bbbe817",
+            "created": "2024-02-14T17:55:20.120Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "861c695b-39dd-47bb-92f9-edb4460de804",
+            "name": "auth",
+            "containerId": "51fb596e-f85a-4630-9ff7-100f27df01b5",
+            "created": "2024-02-14T17:55:20.121Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "8cb06959-8fc5-48bd-80e7-d581e5edbb25",
+            "name": "users",
+            "containerId": "51fb596e-f85a-4630-9ff7-100f27df01b5",
+            "created": "2024-02-14T17:55:20.122Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels",
+            "containerId": "51fb596e-f85a-4630-9ff7-100f27df01b5",
+            "created": "2024-02-14T17:55:20.123Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms",
+            "containerId": "51fb596e-f85a-4630-9ff7-100f27df01b5",
+            "created": "2024-02-14T17:55:20.124Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms-tp-api-rest",
+            "containerId": "51fb596e-f85a-4630-9ff7-100f27df01b5",
+            "created": "2024-02-14T17:55:20.125Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations",
+            "containerId": "51fb596e-f85a-4630-9ff7-100f27df01b5",
+            "created": "2024-02-14T17:55:20.126Z",
+            "sortNum": 80000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "f3e26a11-5923-4070-9b3b-5fe467c43544",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "861c695b-39dd-47bb-92f9-edb4460de804",
+            "name": "signup-role-error",
+            "url": "http://localhost:3000/api/v1/signup",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-14T17:55:20.119Z",
+            "modified": "2024-02-14T17:55:20.119Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"firstName\": \"Angelo 1\",\n\t\"lastName\": \"Ferreira\",\n\t\"email\": \"angelo1.ferreira@email.com\",\n\t\"password\": \"senha123\",\n\t\"phone\": \"(39) 98566-4556\",\n\t\"role\": \"admin\"\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "37be6779-b5e5-46f3-92c1-744c3aa91e9d",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "861c695b-39dd-47bb-92f9-edb4460de804",
+            "name": "login",
+            "url": "http://localhost:3000/api/v1/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-14T17:55:20.120Z",
+            "modified": "2024-02-16T23:01:05.981Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"email\": \"angelo2.ferreira@email.com\",\n\t\"password\": \"senha123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "03afb7a7-9017-4c1c-a625-0f282cd10dcc",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "861c695b-39dd-47bb-92f9-edb4460de804",
+            "name": "signup-admin",
+            "url": "http://localhost:3000/api/v1/admin/signup",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-02-14T17:55:20.121Z",
+            "modified": "2024-02-16T22:52:06.321Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"firstName\": \"Maria 2\",\n\t\"lastName\": \"ferreira\",\n\t\"email\": \"maia2.ferreira@email.com\",\n\t\"password\": \"senha123\",\n\t\"phone\": \"(39) 98566-4556\",\n\t\"role\": \"admin\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "admin",
+                    "password": "senha123"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "ba202234-a9e3-4fd9-bda8-6d9a384a79ac",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "861c695b-39dd-47bb-92f9-edb4460de804",
+            "name": "revoke-refresh-token",
+            "url": "http://localhost:3000/api/v1/revoke-refresh-token?id=fd44027d-5931-4738-84ba-4f5d145ebe82",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-02-14T17:55:20.122Z",
+            "modified": "2024-02-14T17:55:20.122Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZkZGE0N2U5LWE1NWQtNGNkOC1hNmZlLWNhM2RhMWI5NDZmZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwNzI0NzQ2MiwiZXhwIjoxNzA3MjQ4MzAyLCJhdWQiOiJBVURJRU5DRSIsImlzcyI6IklTU1VFUiJ9.TnJlLro-earOG4uaudPIZmFhJrXD4QmXc25NzAJ6waY"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "0c811045-0ddf-42c4-99e6-705f303d6aab",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "861c695b-39dd-47bb-92f9-edb4460de804",
+            "name": "refresh-token",
+            "url": "http://localhost:3000/api/v1/refresh-token",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-02-14T17:55:20.123Z",
+            "modified": "2024-02-14T17:55:20.123Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyY2Y4NzE1LTFlNmEtNGI1Mi04ZjZkLWE0M2Y3MzFiZTYyOCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcwNzUxNzY3NSwiZXhwIjoxNzEwMTA5Njc1LCJhdWQiOiJBVURJRU5DRSIsImlzcyI6IklTU1VFUiJ9.sYBrTDAPrCLymMQRX0taEsxK_kbJg_IxSOU_hFAjaTc\"\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "ba4b59f7-9f0f-4840-a43b-f6878c63d747",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "861c695b-39dd-47bb-92f9-edb4460de804",
+            "name": "signup",
+            "url": "http://localhost:3000/api/v1/signup",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-02-14T17:55:20.124Z",
+            "modified": "2024-02-16T22:51:25.611Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"firstName\": \"Fabio 2\",\n\t\"lastName\": \"Ferreira\",\n\t\"email\": \"fabio2.ferreira@email.com\",\n\t\"password\": \"senha123\",\n\t\"phone\": \"(39) 98566-4556\",\n\t\"role\": \"customer\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d187beef-bcb8-478a-8562-633b30f1f040",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "8cb06959-8fc5-48bd-80e7-d581e5edbb25",
+            "name": "users",
+            "url": "http://localhost:3000/api/v1/users",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-02-14T17:55:20.126Z",
+            "modified": "2024-02-14T17:55:20.126Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"firstName\": \"Maria 1\",\n\t\"lastName\": \"Ferreira\",\n\t\"email\": \"maria1.ferreira@email.com\",\n\t\"password\": \"senha123\",\n\t\"phone\": \"(39) 98566-4556\",\n\t\"role\": \"customer\"\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "bcf5e044-0209-4795-8f64-e09f1d523c11",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "8cb06959-8fc5-48bd-80e7-d581e5edbb25",
+            "name": "users/id",
+            "url": "http://localhost:3000/api/v1/users/1",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2024-02-14T17:55:20.127Z",
+            "modified": "2024-02-14T17:55:20.127Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "561034a2-c256-4199-9622-d324477d85e8",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "8cb06959-8fc5-48bd-80e7-d581e5edbb25",
+            "name": "users/id",
+            "url": "http://localhost:3000/api/v1/users/1",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2024-02-14T17:55:20.128Z",
+            "modified": "2024-02-14T17:55:20.128Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "4a0d0a1e-4b89-4d16-80eb-3ee2e12d186b",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "8cb06959-8fc5-48bd-80e7-d581e5edbb25",
+            "name": "users/id",
+            "url": "http://localhost:3000/api/v1/users/5777a9d4-8d4f-48c4-86b2-aa3de5ff7a3f",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-02-14T17:55:20.129Z",
+            "modified": "2024-02-17T00:31:32.985Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "admin",
+                    "password": "senha123"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "be8951ef-9946-4485-b774-76954c8d4ec2",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "8cb06959-8fc5-48bd-80e7-d581e5edbb25",
+            "name": "users",
+            "url": "http://localhost:3000/api/v1/users",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-02-14T17:55:20.130Z",
+            "modified": "2024-02-16T19:58:20.179Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4193e30a-8da3-4aa6-9cee-5ddffd4640e3",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels",
+            "url": "http://localhost:3000/api/v1/hotels",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-02-14T17:55:20.131Z",
+            "modified": "2024-02-16T21:08:40.314Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "81e8c6a9-9ba8-429f-8878-721cd7aa067d",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels/id",
+            "url": "http://localhost:3000/api/v1/hotels/9",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-02-14T17:55:20.132Z",
+            "modified": "2024-02-16T21:10:23.277Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU5NzgyMTFlLWQ1ODEtNDlmNy05YTg2LWVmZTAxYTczMDlmOCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcwODExNzgwNiwiZXhwIjoxNzA4MTE4NjQ2LCJhdWQiOiJBVURJRU5DRSIsImlzcyI6IklTU1VFUiJ9.bKcJk-R_caYm05PLv8jxSGRkVrPULHVLeiamAnJR_m4"
+            },
+            "tests": []
+        },
+        {
+            "_id": "17f18e39-5310-40cc-8b84-81caa722819a",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels-cache",
+            "url": "http://localhost:3000/api/v1/hotels",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2024-02-14T17:55:20.133Z",
+            "modified": "2024-02-14T17:55:20.133Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "f96888bd-7255-44d1-9172-59cc63eb0e57",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels-pagination",
+            "url": "http://localhost:3000/api/v1/hotels?page=2&limit=2&sortby=name&sort=DESC",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-02-14T17:55:20.134Z",
+            "modified": "2024-02-14T17:55:20.134Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "7578c3b0-b93f-4aa7-bbb6-cc44860d5874",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels-authenticated",
+            "url": "http://localhost:3000/api/v1/hotels",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-02-14T17:55:20.135Z",
+            "modified": "2024-02-14T17:55:20.135Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyY2Y4NzE1LTFlNmEtNGI1Mi04ZjZkLWE0M2Y3MzFiZTYyOCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcwNzUxODc5NCwiZXhwIjoxNzA3NTE5NjM0fQ.zTR2a6AvP1krUxLzF4Tiw_bcapVkfuqw1yHhbxaHbdg"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "18f5f498-3c19-48b9-b90b-ebc953aa0afe",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels",
+            "url": "http://localhost:3000/api/v1/hotels",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2024-02-14T17:55:20.136Z",
+            "modified": "2024-02-16T23:30:59.632Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\": \"Angelo 2 Hotel\",\n\t\"phone\": \"(39) 98566-4556\",\n\t\"address\": \"The Strip, Las Vegas\",\n\t\"rating\": 5\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token-jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ad2bf4af-ac9e-4a25-ab4f-244e104f708a",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels-error-example",
+            "url": "http://localhost:3000/api/v1/hotels",
+            "method": "POST",
+            "sortNum": 180000,
+            "created": "2024-02-14T17:55:20.137Z",
+            "modified": "2024-02-14T17:55:20.137Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\": \"Bellagio\",\n\t\n\t\"address\": \"The Strip, Las Vegas\",\n\t\"rating\": 5\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "d6cc3106-00c9-444e-8dd7-48b98bc0d1b4",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels/id",
+            "url": "http://localhost:3000/api/v1/hotels/6",
+            "method": "PUT",
+            "sortNum": 190000,
+            "created": "2024-02-14T17:55:20.138Z",
+            "modified": "2024-02-14T17:55:20.138Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\": \"Bellagio\",\n\t\"phone\": \"(39) 98566-4444\",\n\t\"address\": \"The Strip, Las Vegas\",\n\t\"rating\": 5\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "72e18a33-89e0-4d17-b4dc-d39068fa08f5",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "39b3a8b8-f834-4f17-ac78-5179dbcabd5e",
+            "name": "hotels/id",
+            "url": "http://localhost:3000/api/v1/hotels/1",
+            "method": "DELETE",
+            "sortNum": 200000,
+            "created": "2024-02-14T17:55:20.139Z",
+            "modified": "2024-02-16T23:34:28.261Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token-jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "08106250-ab16-45ff-b4cd-d7b62d5e3819",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms",
+            "url": "http://localhost:3000/api/v1/rooms",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2024-02-14T17:55:20.140Z",
+            "modified": "2024-02-17T00:14:29.229Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "285ad99a-30d2-4b9e-961f-74e163803956",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms/id",
+            "url": "http://localhost:3000/api/v1/rooms/2",
+            "method": "GET",
+            "sortNum": 220000,
+            "created": "2024-02-14T17:55:20.141Z",
+            "modified": "2024-02-14T17:55:20.141Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "d1dfef12-504a-4fe1-b3e7-084c18651212",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms-cache",
+            "url": "http://localhost:3000/api/v1/rooms",
+            "method": "GET",
+            "sortNum": 230000,
+            "created": "2024-02-14T17:55:20.142Z",
+            "modified": "2024-02-14T17:55:20.142Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "12149a25-9280-473e-98d7-7eedd3c9f1b7",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms-pagination",
+            "url": "http://localhost:3000/api/v1/rooms?page=2&limit=3&sortby=name&sort=ASC",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2024-02-14T17:55:20.143Z",
+            "modified": "2024-02-14T17:55:20.143Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "ecbd4fc4-fb30-4786-900e-fb3c294d3532",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms-authenticated",
+            "url": "http://localhost:3000/api/v1/rooms",
+            "method": "GET",
+            "sortNum": 250000,
+            "created": "2024-02-14T17:55:20.144Z",
+            "modified": "2024-02-14T17:55:20.144Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyY2Y4NzE1LTFlNmEtNGI1Mi04ZjZkLWE0M2Y3MzFiZTYyOCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcwNzUxODc5NCwiZXhwIjoxNzA3NTE5NjM0fQ.zTR2a6AvP1krUxLzF4Tiw_bcapVkfuqw1yHhbxaHbdg"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "af4ecd46-86ff-4623-b34d-4b4d0a850e81",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms",
+            "url": "http://localhost:3000/api/v1/rooms",
+            "method": "POST",
+            "sortNum": 260000,
+            "created": "2024-02-14T17:55:20.145Z",
+            "modified": "2024-02-17T00:15:57.002Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"hotelId\": 1,\n\t\"type\": \"double\",\n\t\"dailyRent\": 200.00\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token-jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e98f2020-4276-4c82-8842-a00d0f203616",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms-error-example",
+            "url": "http://localhost:3000/api/v1/rooms",
+            "method": "POST",
+            "sortNum": 270000,
+            "created": "2024-02-14T17:55:20.146Z",
+            "modified": "2024-02-14T17:55:20.146Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\": \"Bellagio\",\n\t\n\t\"address\": \"The Strip, Las Vegas\",\n\t\"rating\": 5\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "5efbff7b-9063-4b7a-8e1d-25f3ff3ed37f",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms/id",
+            "url": "http://localhost:3000/api/v1/rooms/2",
+            "method": "PUT",
+            "sortNum": 280000,
+            "created": "2024-02-14T17:55:20.147Z",
+            "modified": "2024-02-14T17:55:20.147Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"hotelId\": 1,\n\t\"type\": \"double\",\n\t\"dailyRent\": 240.00\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "ab068f15-7895-4de3-b8cc-46f2073a36d2",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "ffa94634-e1c9-44ef-b247-8ee7ed214c93",
+            "name": "rooms/id",
+            "url": "http://localhost:3000/api/v1/rooms/10",
+            "method": "DELETE",
+            "sortNum": 290000,
+            "created": "2024-02-14T17:55:20.148Z",
+            "modified": "2024-02-17T00:21:34.773Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token-jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a6b8cf72-0c9d-4011-8e08-6d806db35a59",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms",
+            "url": "http://localhost:3000/api/v1/room/getRooms",
+            "method": "POST",
+            "sortNum": 300000,
+            "created": "2024-02-14T17:55:20.149Z",
+            "modified": "2024-02-14T17:55:20.149Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "270e19c1-15fe-48a1-bf0b-86705c75bd3b",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms/id",
+            "url": "http://localhost:3000/api/v1/room/getRoom/2",
+            "method": "POST",
+            "sortNum": 310000,
+            "created": "2024-02-14T17:55:20.150Z",
+            "modified": "2024-02-14T17:55:20.150Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "bedf9800-cea3-460a-b0f5-1146c7603af8",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms-cache",
+            "url": "http://localhost:3000/api/v1/rooms",
+            "method": "GET",
+            "sortNum": 320000,
+            "created": "2024-02-14T17:55:20.151Z",
+            "modified": "2024-02-14T17:55:20.151Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "558e0902-ff1d-4c06-be78-e7c7a6a689c4",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms-pagination",
+            "url": "http://localhost:3000/api/v1/rooms?page=2&limit=3&sortby=name&sort=ASC",
+            "method": "GET",
+            "sortNum": 330000,
+            "created": "2024-02-14T17:55:20.152Z",
+            "modified": "2024-02-14T17:55:20.152Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "a3e9a8df-150c-4e2f-8688-0877d87b7f92",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms-authenticated",
+            "url": "http://localhost:3000/api/v1/rooms",
+            "method": "GET",
+            "sortNum": 340000,
+            "created": "2024-02-14T17:55:20.153Z",
+            "modified": "2024-02-14T17:55:20.153Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyY2Y4NzE1LTFlNmEtNGI1Mi04ZjZkLWE0M2Y3MzFiZTYyOCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcwNzUxODc5NCwiZXhwIjoxNzA3NTE5NjM0fQ.zTR2a6AvP1krUxLzF4Tiw_bcapVkfuqw1yHhbxaHbdg"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "87b611cc-d36e-4683-8ca1-293a8cb380cf",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms",
+            "url": "http://localhost:3000/api/v1/room",
+            "method": "POST",
+            "sortNum": 350000,
+            "created": "2024-02-14T17:55:20.154Z",
+            "modified": "2024-02-14T17:55:20.154Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"hotelId\": 1,\n\t\"type\": \"double\",\n\t\"dailyRent\": 170.00\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "2051a869-fe4d-42ef-8eef-c517a2d1eb4c",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms-error-example",
+            "url": "http://localhost:3000/api/v1/rooms",
+            "method": "POST",
+            "sortNum": 360000,
+            "created": "2024-02-14T17:55:20.155Z",
+            "modified": "2024-02-14T17:55:20.155Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\": \"Bellagio\",\n\t\n\t\"address\": \"The Strip, Las Vegas\",\n\t\"rating\": 5\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "2b31cf71-b62e-4da1-9ee4-d7b2bfbdeb4a",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms/id",
+            "url": "http://localhost:3000/api/v1/rooms/2",
+            "method": "PUT",
+            "sortNum": 370000,
+            "created": "2024-02-14T17:55:20.156Z",
+            "modified": "2024-02-14T17:55:20.156Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"hotelId\": 1,\n\t\"type\": \"double\",\n\t\"dailyRent\": 240.00\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "174fd348-d805-47ec-b4dd-112ba2d6db07",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "78d04527-c247-450f-a0e6-0318226ccc91",
+            "name": "rooms/id",
+            "url": "http://localhost:3000/api/v1/room/10",
+            "method": "DELETE",
+            "sortNum": 380000,
+            "created": "2024-02-14T17:55:20.157Z",
+            "modified": "2024-02-14T17:55:20.157Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "docs": ""
+        },
+        {
+            "_id": "57bae73c-c023-4447-bafa-e001d5236287",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations",
+            "url": "http://localhost:3000/api/v1/reservations",
+            "method": "GET",
+            "sortNum": 390000,
+            "created": "2024-02-14T17:55:20.158Z",
+            "modified": "2024-02-16T23:38:36.904Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token-jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "05b88375-b1c2-40da-b335-addb3c28e7dc",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations/id",
+            "url": "http://localhost:3000/api/v1/reservations/1",
+            "method": "GET",
+            "sortNum": 400000,
+            "created": "2024-02-14T17:55:20.159Z",
+            "modified": "2024-02-17T00:00:34.146Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token-jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "311c2f96-615d-4c4f-8093-23ad7b0da20f",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations-cache",
+            "url": "http://localhost:3000/api/v1/reservations",
+            "method": "GET",
+            "sortNum": 410000,
+            "created": "2024-02-14T17:55:20.160Z",
+            "modified": "2024-02-14T17:55:20.160Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "0fa44b05-3632-4948-a9b0-c906ec2af124",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations-pagination",
+            "url": "http://localhost:3000/api/v1/reservations?page=2&limit=3&sortby=name&sort=ASC",
+            "method": "GET",
+            "sortNum": 420000,
+            "created": "2024-02-14T17:55:20.161Z",
+            "modified": "2024-02-14T17:55:20.161Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "docs": ""
+        },
+        {
+            "_id": "0e74b96b-7e40-4523-ae4c-fbaecf3afbab",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations-authenticated",
+            "url": "http://localhost:3000/api/v1/reservations",
+            "method": "GET",
+            "sortNum": 430000,
+            "created": "2024-02-14T17:55:20.162Z",
+            "modified": "2024-02-14T17:55:20.162Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyY2Y4NzE1LTFlNmEtNGI1Mi04ZjZkLWE0M2Y3MzFiZTYyOCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTcwNzUxODc5NCwiZXhwIjoxNzA3NTE5NjM0fQ.zTR2a6AvP1krUxLzF4Tiw_bcapVkfuqw1yHhbxaHbdg"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "9b4be198-44e8-4939-b110-ac455ebe834a",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations",
+            "url": "http://localhost:3000/api/v1/reservations",
+            "method": "POST",
+            "sortNum": 440000,
+            "created": "2024-02-14T17:55:20.163Z",
+            "modified": "2024-02-16T23:45:00.357Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"checkin\": \"25/11/2020\",\n\t\"checkout\": \"27/11/2020\",\t\n\t\"userId\": \"195bfa8f-e6d6-4911-938c-8ef23aaba157\",\n\t\"roomId\": 2,\n\t\"numberOfGuests\": 2\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token-jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "61f3d77c-86b4-46a1-b629-221c0e13978e",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations-error-example",
+            "url": "http://localhost:3000/api/v1/reservations",
+            "method": "POST",
+            "sortNum": 450000,
+            "created": "2024-02-14T17:55:20.164Z",
+            "modified": "2024-02-14T17:55:20.164Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\": \"Bellagio\",\n\t\n\t\"address\": \"The Strip, Las Vegas\",\n\t\"rating\": 5\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "591a4c33-27ba-4c7e-94e0-d709e4bd3d13",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations/id",
+            "url": "http://localhost:3000/api/v1/reservations/1",
+            "method": "PUT",
+            "sortNum": 460000,
+            "created": "2024-02-14T17:55:20.165Z",
+            "modified": "2024-02-14T17:55:20.165Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"name\": \"Bellagio\",\n\t\"phone\": \"(39) 98566-4444\",\n\t\"address\": \"The Strip, Las Vegas\",\n\t\"rating\": 5\n}"
+            },
+            "docs": ""
+        },
+        {
+            "_id": "e619a7d0-d671-4cea-ba3e-6d3f9bed470f",
+            "colId": "1297e11a-171f-4064-80b1-0dbaf2f60210",
+            "containerId": "cb438b64-cb0f-4fd3-9d99-79a42f6d8989",
+            "name": "reservations/id",
+            "url": "http://localhost:3000/api/v1/reservations/1",
+            "method": "DELETE",
+            "sortNum": 470000,
+            "created": "2024-02-14T17:55:20.166Z",
+            "modified": "2024-02-14T17:55:20.166Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "Insomnia/2023.5.7"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": ""
+            },
+            "docs": ""
+        }
+    ]
+}
