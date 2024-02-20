@@ -57,12 +57,12 @@ CREATE TABLE public.users (
     password character varying(255) NOT NULL,
     phone character varying(255) NOT NULL,
     role character varying(255) NOT NULL,
-    refresh_token character varying(255) DEFAULT 'NOT ISSUED' NOT NULL ,
+    refresh_token character varying(255) DEFAULT 'NOT ISSUED' NOT NULL
 );
 
-INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ("195bfa8f-e6d6-4911-938c-8ef23aaba157","Fabio 2","Ferreira","fabio2.ferreira@email.com","$2b$10$TIpSNxZ3mZZJoEAlavWx6eY.608pzzSYrVwTFuTyNqcF2/6yKAf0W","(39) 98566-4556","customer");
-INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ("27d7f819-8388-46dd-8298-96fd8470bd93","Angelo 2","Ferreira","angelo2.ferreira@email.com","$2b$10$Sra4QaC4nMEo2XhtzNi7geTHJJVpLF0iDeH6x3q1l2BK0gt.yYZcW","(39) 98566-4556","manager");
-INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ("65d3157e-abbd-44b4-b2fb-0c328f33f6e8","Maria 2","ferreira","maia2.ferreira@email.com","$2b$10$9VNt/jQ1fwfKUqxsXB6IQuvsy2Yuv9wKAl/Wu03nsnyLakfETFQH6","(39) 98566-4556","admin");
+INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ('195bfa8f-e6d6-4911-938c-8ef23aaba157','Fabio 2','Ferreira','fabio2.ferreira@email.com','$2b$10$TIpSNxZ3mZZJoEAlavWx6eY.608pzzSYrVwTFuTyNqcF2/6yKAf0W','(39) 98566-4556','customer');
+INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ('27d7f819-8388-46dd-8298-96fd8470bd93','Angelo 2','Ferreira','angelo2.ferreira@email.com','$2b$10$Sra4QaC4nMEo2XhtzNi7geTHJJVpLF0iDeH6x3q1l2BK0gt.yYZcW','(39) 98566-4556','manager');
+INSERT INTO public.users (user_id, first_name, last_name, email, password, phone, role) VALUES ('65d3157e-abbd-44b4-b2fb-0c328f33f6e8','Maria 2','ferreira','maia2.ferreira@email.com','$2b$10$9VNt/jQ1fwfKUqxsXB6IQuvsy2Yuv9wKAl/Wu03nsnyLakfETFQH6','(39) 98566-4556','admin');
 
 
 CREATE TABLE public.reservations (
