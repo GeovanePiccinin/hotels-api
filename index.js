@@ -1,4 +1,4 @@
-import "./env.js";
+/* import "./env.js";
 import express from "express";
 import cors from "cors";
 import logger from "./config/logger.js";
@@ -35,5 +35,16 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(3000, () => console.log("API Started!"));
+
+export default app;
+ */
+
+import express from "express";
+
+const app = express();
+
+app.get("/", (req, res) => res.send("Express on Vercel - Updated"));
+
+app.listen(3005, () => console.log("Server ready on port 3000."));
 
 export default app;
