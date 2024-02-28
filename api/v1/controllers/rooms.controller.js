@@ -1,6 +1,7 @@
 import RoomsService from "../services/rooms.service.js";
 import { validationResult } from "express-validator";
-import { cache } from "../../middlewares/cache.middleware.js";
+//import { cache } from "../../middlewares/cache.middleware.js";
+import { caching } from "../../middlewares/redis.middleware.js";
 
 const myValidationResult = validationResult.withDefaults({
   formatter: (error) => error.msg,
@@ -10,7 +11,9 @@ async function getRooms(req, res, next) {
   try {
     const results = await RoomsService.getRooms(req.pagination);
 
-    cache.set(`getRooms - ${JSON.stringify(req.pagination)}`, results);
+    //redis caching
+    caching(`getRooms - ${JSON.stringify(req.pagination)}`, results);
+
     res.status(200);
     res.send(results);
     logger.info("GET /rooms");

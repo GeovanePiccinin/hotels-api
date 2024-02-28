@@ -3,3 +3,5 @@
 node_modules
 error.log
 info.log
+.vercel
+db-string.txt
