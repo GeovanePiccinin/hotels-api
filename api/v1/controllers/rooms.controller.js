@@ -1,7 +1,11 @@
 import RoomsService from "../services/rooms.service.js";
 import { validationResult } from "express-validator";
-//import { cache } from "../../middlewares/cache.middleware.js";
-import { caching } from "../../middlewares/redis.middleware.js";
+import { cache } from "../../middlewares/cache.middleware.js";
+
+/* para utilizar o cache do redis o servidor precisa estar rodando
+e configurado na função de conexão no middleware redis
+*/
+//import { caching } from "../../middlewares/redis.middleware.js";
 
 const myValidationResult = validationResult.withDefaults({
   formatter: (error) => error.msg,
@@ -11,8 +15,10 @@ async function getRooms(req, res, next) {
   try {
     const results = await RoomsService.getRooms(req.pagination);
 
-    //redis caching
-    caching(`getRooms - ${JSON.stringify(req.pagination)}`, results);
+    //redis caching (precisa do servidor redis rodando)
+    //caching(`getRooms - ${JSON.stringify(req.pagination)}`, results);
+
+    cache.set(`getRooms - ${JSON.stringify(req.pagination)}`, results);
 
     res.status(200);
     res.send(results);
