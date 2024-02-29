@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import logger from "./config/logger.js";
 import helmet from "helmet";
+import bodyParser from "body-parser";
 
 import { redisConnect } from "./api/middlewares/redis.middleware.js";
 
@@ -14,7 +15,8 @@ global.logger = logger;
 redisConnect();
 
 const app = express();
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(helmet());
 app.use(function (req, res, next) {
@@ -34,6 +36,6 @@ app.use((err, req, res, next) => {
     .send({ error: err.message || "Something went wrong" });
 });
 
-app.listen(3005, () => console.log("API Started!"));
+app.listen(3001, () => console.log("API Started!"));
 
 export default app;
