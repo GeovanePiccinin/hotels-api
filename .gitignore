@@ -5,3 +5,5 @@ error.log
 info.log
 .vercel
 db-string.txt
+
+.vercel
